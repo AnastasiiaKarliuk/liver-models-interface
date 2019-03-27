@@ -20,7 +20,7 @@ namespace App
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -50,7 +50,11 @@ namespace App
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            grade1.Visible = true;
+            grade2.Visible = true;
+            grade3.Visible = true;
+            hide.Visible = true;
+            details.Visible = false;
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -102,6 +106,12 @@ namespace App
             var numbers = new List<double>();
             var vars = new List<TextBox>() { X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, X11, X12, X13, X14, X15, X16, X17, X18, X19 };
 
+            grade1.Visible = false;
+            grade2.Visible = false;
+            grade3.Visible = false;
+            hide.Enabled = false;
+            details.Enabled = true;
+
             foreach (TextBox i in vars)
             {
                 if (!string.IsNullOrEmpty(i.Text))
@@ -111,7 +121,6 @@ namespace App
                     Console.WriteLine(x);
                     if (i == X19)
                     {
-
                         x1 = numbers[0];
                         x2 = numbers[1];
                         x3 = numbers[2];
@@ -134,10 +143,12 @@ namespace App
 
                         if (string.IsNullOrEmpty(meth.Text))
                         {
+                           
                             MessageBox.Show(" No one method is choosen.\n Please, choose method of segmentation", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
                         else
                         {
+
                             if (meth.Text == "2.1")
                             {
                                 m1 = -0.453 + 0.58 * x2 * x10 + 0.358 * Math.Pow(x18, 2) + 0.0003 * x3 * x6 - 0.134 * x4 * x11 +
@@ -156,10 +167,10 @@ namespace App
                             if (meth.Text == "LIVER")
                             {
                                 m1 = 0.133 + 27.788 * Math.Pow(x2, 2) - 0.17 * x4 * x7 + 1.209 * x2 * x14 - 0.0003 * x12 * x17 -
-                                    4.207 * x2 * x19 - 11.983 * x2 * x7 - 159.092 * x2 * x15 + 15.698 * x2 * x8 -
-                                    0.409 * x2 * x4 + 0.005 * x2 * x12 + 0.006 * x2 * x5 + 4.569 * x2 * x18 - 3.557 * x2 * x13 -
-                                    155.426 * x2 + 123.007 * x2 * x9 + 33.941 * x2 * x11 + 13.21 * x2 * x17 + 0.002 * x2 * x6 +
-                                    41.514 * x2 * x16 + 0.029 * x4 * x10;
+                                   4.207 * x2 * x19 - 11.983 * x2 * x7 - 159.092 * x2 * x15 + 15.698 * x2 * x8 -
+                                   0.409 * x2 * x4 + 0.005 * x2 * x12 + 0.006 * x2 * x5 + 4.569 * x2 * x18 - 3.557 * x2 * x13 -
+                                   155.426 * x2 + 123.007 * x2 * x9 + 33.941 * x2 * x11 + 13.21 * x2 * x17 + 0.002 * x2 * x6 +
+                                   41.514 * x2 * x16 + 0.029 * x4 * x10;
 
                                 m2 = 4.714 - 0.116 * x9 * x12 - 0.602 * x2 * x19 + 106.325 * Math.Pow(x11, 2) + 25.829 * x4 * x11 +
                                     1.347 * x2 * x13 + 0.008 * x2 * x6 - 0.028 * x2 * x5 + 2.762 * x4 * x18 - 21.009 * x13 * x19 +
@@ -228,6 +239,10 @@ namespace App
                             {
                                 String result_;
 
+                                grade1.Text = "Some text"+m_1.ToString();
+                                grade2.Text = "Some text"+m_2.ToString();
+                                grade3.Text = m_3.ToString();
+
                                 if (m_1 > 0)
                                 {
                                     result_ = "It is the first grade";
@@ -265,49 +280,34 @@ namespace App
 
         private void meth_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (meth.Text == "2.1")
-            {
-                X4.ReadOnly = true;
-                X5.ReadOnly = false;
-                X9.ReadOnly = true;
-                X13.ReadOnly = true;
-                X16.ReadOnly = true;
-                X15.ReadOnly = false;
-            }
-            else
-                if (meth.Text == "41")
-            {
-                X4.ReadOnly = false;
-                X5.ReadOnly = true;
-                X9.ReadOnly = false;
-                X13.ReadOnly = false;
-                X16.ReadOnly = false;
-                X15.ReadOnly = false;
-            }
-            else
-                    if (meth.Text == "SNAP")
-            {
-                X4.ReadOnly = false;
-                X15.ReadOnly = true;
-                X9.ReadOnly = false;
-                X13.ReadOnly = false;
-                X16.ReadOnly = false;
-                X5.ReadOnly = false;
-
-            }
-            else
-                        if (meth.Text == "LIVER")
-            {
-                X4.ReadOnly = false;
-                X15.ReadOnly = false;
-                X9.ReadOnly = false;
-                X13.ReadOnly = false;
-                X16.ReadOnly = false;
-                X5.ReadOnly = false;
-            }
+            
         }
 
         private void X15_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void details_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            grade1.Visible = false;
+            grade2.Visible = false;
+            grade3.Visible = false;
+            hide.Enabled = true;
+            details.Enabled = false;
+        }
+
+        private void grade2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -1,0 +1,15 @@
+This application was created for exploration main methods of liver's 
+segmentation.
+It is included four method:
+"2.1" - some information about it
+"Liver"  - 
+"41" - 
+"SNAP" -
+
+To start with entering the calculeded values of patient. Secondly
+choose the method of segmentation (2.1, LIVER, 41, SNAP) his/her 
+image of livers. At last ckick on "Calculate".
+In field named "Resul" you will have the veridct.
+
+For more details you can click on "Details" and check result of
+prediction every model of this method of segmentation.
