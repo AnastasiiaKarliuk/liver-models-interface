@@ -35,7 +35,7 @@ namespace App
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            instructions.Visible = true;
         }
 
         private void label20_Click(object sender, EventArgs e)
@@ -53,8 +53,8 @@ namespace App
             grade1.Visible = true;
             grade2.Visible = true;
             grade3.Visible = true;
-            hide.Visible = true;
-            details.Visible = false;
+            hide.Enabled = true;
+            details.Enabled = false;
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -239,8 +239,8 @@ namespace App
                             {
                                 String result_;
 
-                                grade1.Text = "Some text"+m_1.ToString();
-                                grade2.Text = "Some text"+m_2.ToString();
+                                grade1.Text = "Some text  "+m_1.ToString();
+                                grade2.Text = "Some text  "+m_2.ToString();
                                 grade3.Text = m_3.ToString();
 
                                 if (m_1 > 0)
@@ -298,8 +298,8 @@ namespace App
             grade1.Visible = false;
             grade2.Visible = false;
             grade3.Visible = false;
-            hide.Enabled = true;
-            details.Enabled = false;
+            hide.Enabled = false;
+            details.Enabled = true;
         }
 
         private void grade2_TextChanged(object sender, EventArgs e)
@@ -308,6 +308,212 @@ namespace App
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void X1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && (ch != ',' || X1.Text.Contains(',')))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void X2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && (ch != ',' || X2.Text.Contains(',')))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void X3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && (ch != ',' || X3.Text.Contains(',')))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void X4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && (ch != ',' || X4.Text.Contains(',')))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void X5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && (ch != ',' || X5.Text.Contains(',')))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void X6_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && (ch != ',' || X6.Text.Contains(',')))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void X7_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && (ch != ',' || X7.Text.Contains(',')))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void X8_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && (ch != ',' || X8.Text.Contains(',')))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void X9_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void X9_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && (ch != ',' || X9.Text.Contains(',')))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void X10_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && (ch != ',' || X10.Text.Contains(',')))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void X11_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && (ch != ',' || X11.Text.Contains(',')))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void X12_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && (ch != ',' || X12.Text.Contains(',')))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void X13_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && (ch != ',' || X13.Text.Contains(',')))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void X14_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && (ch != ',' || X14.Text.Contains(',')))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void X15_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && (ch != ',' || X15.Text.Contains(',')))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void X16_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && (ch != ',' || X16.Text.Contains(',')))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void X17_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && (ch != ',' || X17.Text.Contains(',')))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void X18_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && (ch != ',' || X18.Text.Contains(',')))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void X19_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && (ch != ',' || X19.Text.Contains(',')))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void X10_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void X13_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void X18_TextChanged(object sender, EventArgs e)
         {
 
         }
