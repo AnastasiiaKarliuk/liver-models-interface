@@ -13,40 +13,38 @@ namespace App
     public partial class Form1 : Form
     {
 
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            e.Graphics.DrawLine(new Pen(Color.Gray), 610, 0, 610, 600);
+        }
+
+
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            close_instructions.Visible = true;
             instructions.Visible = true;
+            button1.Visible = false;
         }
 
-        private void label20_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void label21_Click(object sender, EventArgs e)
         {
 
         }
+
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -57,46 +55,6 @@ namespace App
             details.Enabled = false;
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label22_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox20_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox17_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label23_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label23_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -104,42 +62,63 @@ namespace App
             Double m1, m2, m3;
 
             var numbers = new List<double>();
-            var vars = new List<TextBox>() { X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, X11, X12, X13, X14, X15, X16, X17, X18, X19 };
+            var vars = new List<TextBox>() { X4, X5, X6, X7, X8, X9, X10, X11, X12, X13, X14, X15, X16, X17, X18, X19 };
 
             grade1.Visible = false;
             grade2.Visible = false;
             grade3.Visible = false;
             hide.Enabled = false;
-            details.Enabled = true;
+
 
             foreach (TextBox i in vars)
             {
                 if (!string.IsNullOrEmpty(i.Text))
-                {                 
+                {
                     x = Convert.ToDouble(i.Text); ;
                     numbers.Add(x);
                     Console.WriteLine(x);
                     if (i == X19)
                     {
-                        x1 = numbers[0];
-                        x2 = numbers[1];
-                        x3 = numbers[2];
-                        x4 = numbers[3];
-                        x5 = numbers[4];
-                        x6 = numbers[5];
-                        x7 = numbers[6];
-                        x8 = numbers[7];
-                        x9 = numbers[8];
-                        x10 = numbers[9];
-                        x11 = numbers[10];
-                        x12 = numbers[11];
-                        x13 = numbers[12];
-                        x14 = numbers[13];
-                        x15 = numbers[14];
-                        x16 = numbers[15];
-                        x17 = numbers[16];
-                        x18 = numbers[17];
-                        x19 = numbers[18];
+                        x1 = 0;
+                        x2 = 0;
+                        x3 = 0;
+                        x4 = numbers[0];
+                        x5 = numbers[1];
+                        x6 = numbers[2];
+                        x7 = numbers[3];
+                        x8 = numbers[4];
+                        x9 = numbers[5];
+                        x10 = numbers[6];
+                        x11 = numbers[7];
+                        x12 = numbers[8];
+                        x13 = numbers[9];
+                        x14 = numbers[10];
+                        x15 = numbers[11];
+                        x16 = numbers[12];
+                        x17 = numbers[13];
+                        x18 = numbers[14];
+                        x19 = numbers[15];
+
+                        if (string.IsNullOrEmpty(X123.Text))
+                        {
+
+                            MessageBox.Show(" No one place is choosen.", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                        else
+                        {
+                            if (X123.Text == "CERVIX")
+                            {
+                                x1 = 1;
+                            }
+                            if (X123.Text == "HN")
+                            {
+                                x2 = 1;
+                            }
+                            if (X123.Text == "LUNG")
+                            {
+                                x3 = 1;
+                            }
+                        }
 
                         if (string.IsNullOrEmpty(meth.Text))
                         {
@@ -148,7 +127,7 @@ namespace App
                         }
                         else
                         {
-
+                            details.Enabled = true;
                             if (meth.Text == "2.1")
                             {
                                 m1 = -0.453 + 0.58 * x2 * x10 + 0.358 * Math.Pow(x18, 2) + 0.0003 * x3 * x6 - 0.134 * x4 * x11 +
@@ -239,9 +218,9 @@ namespace App
                             {
                                 String result_;
 
-                                grade1.Text = "Some text  "+m_1.ToString();
-                                grade2.Text = "Some text  "+m_2.ToString();
-                                grade3.Text = m_3.ToString();
+                                grade1.Text = "Grade 1 = " + m_1.ToString();
+                                grade2.Text = "Grade 2 = " + m_2.ToString();
+                                grade3.Text = "Grade 3 = " + m_3.ToString();
 
                                 if (m_1 > 0)
                                 {
@@ -272,26 +251,13 @@ namespace App
                 }
                 else
                 {
-                    MessageBox.Show("No one value\nPlease, enter all values", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    break; 
+                    i.BackColor = Color.Red;
+                    MessageBox.Show("Not all value\nPlease, enter all values", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    break;
                 }
             }            
         }
 
-        private void meth_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void X15_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void details_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -302,42 +268,6 @@ namespace App
             details.Enabled = true;
         }
 
-        private void grade2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void X1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char ch = e.KeyChar;
-            if (!Char.IsDigit(ch) && ch != 8 && (ch != ',' || X1.Text.Contains(',')))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void X2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char ch = e.KeyChar;
-            if (!Char.IsDigit(ch) && ch != 8 && (ch != ',' || X2.Text.Contains(',')))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void X3_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char ch = e.KeyChar;
-            if (!Char.IsDigit(ch) && ch != 8 && (ch != ',' || X3.Text.Contains(',')))
-            {
-                e.Handled = true;
-            }
-        }
 
         private void X4_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -382,11 +312,6 @@ namespace App
             {
                 e.Handled = true;
             }
-        }
-
-        private void X9_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void X9_KeyPress(object sender, KeyPressEventArgs e)
@@ -488,35 +413,343 @@ namespace App
             }
         }
 
-        private void label12_Click(object sender, EventArgs e)
+ 
+        private void close_instructions_Click(object sender, EventArgs e)
         {
-
+            instructions.Visible = false;
+            close_instructions.Visible = false;
+            button1.Visible = true;
         }
 
-        private void X10_TextChanged(object sender, EventArgs e)
-        {
 
+        private void X4_Validating(object sender, CancelEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(X4.Text))
+            {
+                if (Convert.ToDouble(X4.Text)>=0 && Convert.ToDouble(X4.Text) < 20)
+                {
+                    X4.BackColor = Color.White;
+                }
+                else
+                {
+                    X4.BackColor = Color.Blue;
+                    MessageBox.Show("Value not in range (0-20)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                X4.BackColor = Color.Red;
+            }
         }
 
-        private void label9_Click(object sender, EventArgs e)
+        private void X5_Validating(object sender, CancelEventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(X4.Text))
+            {
+                if (Convert.ToDouble(X5.Text) >= 0 && Convert.ToDouble(X5.Text) < 1500)
+                {
+                    X5.BackColor = Color.White;
+                }
+                else
+                {
+                    X5.BackColor = Color.Red;
+                    MessageBox.Show(" MVT not in range (0-1500)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                X5.BackColor = Color.Red;
+            }
         }
 
-        private void X13_TextChanged(object sender, EventArgs e)
+        private void X6_Validating(object sender, CancelEventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(X6.Text))
+                {
+                    if (Convert.ToDouble(X6.Text) >= 0 && Convert.ToDouble(X6.Text) < 6500)
+                    {
+                        X6.BackColor = Color.White;
+                    }
+                    else
+                    {
+                        X6.BackColor = Color.Red;
+                        MessageBox.Show(" TGL not in range (0-6500)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+            else
+            {
+                X6.BackColor = Color.Red;
+            }
         }
 
-        private void label16_Click(object sender, EventArgs e)
+        private void X7_Validating(object sender, CancelEventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(X7.Text))
+            {
+                if (Convert.ToDouble(X7.Text) >= 0 && Convert.ToDouble(X7.Text) < 1)
+                {
+                    X7.BackColor = Color.White;
+                }
+                else
+                {
+                    X7.BackColor = Color.Red;
+                    MessageBox.Show(" GLCM Homogeneity not in range (0-1)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                X7.BackColor = Color.Red;
+            }
         }
 
-        private void X18_TextChanged(object sender, EventArgs e)
+        private void X8_Validating(object sender, CancelEventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(X8.Text))
+            {
+                if (Convert.ToDouble(X8.Text) >= 0 && Convert.ToDouble(X8.Text) < 4)
+                {
+                    X8.BackColor = Color.White;
+                }
+                else
+                {
+                    X8.BackColor = Color.Red;
+                    MessageBox.Show(" GLCM_Entropy not in range (0-4)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                X8.BackColor = Color.Red;
+            }
         }
+
+        private void X9_Validating(object sender, CancelEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(X9.Text))
+            {
+                if (Convert.ToDouble(X9.Text) >= 0 && Convert.ToDouble(X9.Text) <= 1)
+                {
+                    X9.BackColor = Color.White;
+                }
+                else
+                {
+                    X9.BackColor = Color.Red;
+                    MessageBox.Show(" GLRLM_SRE not in range (0-1)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                X9.BackColor = Color.Red;
+            }
+        }
+
+        private void X10_Validating(object sender, CancelEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(X10.Text))
+            {
+                if (Convert.ToDouble(X10.Text) >= 0 && Convert.ToDouble(X10.Text) <= 4)
+                {
+                    X10.BackColor = Color.White;
+                }
+                else
+                {
+                    X10.BackColor = Color.Red;
+                    MessageBox.Show(" GLRLM_LRE not in range (0-4)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                X10.BackColor = Color.Red;
+            }
+        }
+
+        private void X11_Validating(object sender, CancelEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(X11.Text))
+            {
+                if (Convert.ToDouble(X11.Text) >= 0 && Convert.ToDouble(X11.Text) < 0.5)
+                {
+                    X11.BackColor = Color.White;
+                }
+                else
+                {
+                    X11.BackColor = Color.Red;
+                    MessageBox.Show(" GLZLM_LGZE not in range (0-0.5)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                X11.BackColor = Color.Red;
+            }
+        }
+
+        private void X12_Validating(object sender, CancelEventArgs e)
+        {
+            TextBox x = X12;
+            if (!string.IsNullOrEmpty(x.Text))
+            {
+                if (Convert.ToDouble(x.Text) >= 0 && Convert.ToDouble(x.Text) < 1500)
+                {
+                    x.BackColor = Color.White;
+                }
+                else
+                {
+                    x.BackColor = Color.Red;
+                    MessageBox.Show(" GLZLM_HGZE not in range (0-1500)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                x.BackColor = Color.Red;
+            }
+        }
+
+        private void X13_Validating(object sender, CancelEventArgs e)
+        {
+            TextBox x = X13;
+            if (!string.IsNullOrEmpty(x.Text))
+            {
+                if (Convert.ToDouble(x.Text) >= 0 && Convert.ToDouble(x.Text) < 2)
+                {
+                    x.BackColor = Color.White;
+                }
+                else
+                {
+                    x.BackColor = Color.Red;
+                    MessageBox.Show(" SKEWNESS not in range (0-2)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                x.BackColor = Color.Red;
+            }
+        }
+
+        private void X14_Validating(object sender, CancelEventArgs e)
+        {
+            TextBox x = X14;
+            if (!string.IsNullOrEmpty(x.Text))
+            {
+                if (Convert.ToDouble(x.Text) >= 0 && Convert.ToDouble(x.Text) < 7)
+                {
+                    x.BackColor = Color.White;
+                }
+                else
+                {
+                    x.BackColor = Color.Red;
+                    MessageBox.Show(" KURTOSIS not in range (0-7)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                x.BackColor = Color.Red;
+            }
+        }
+
+        private void X15_Validating(object sender, CancelEventArgs e)
+        {
+            TextBox x = X15;
+            if (!string.IsNullOrEmpty(x.Text))
+            {
+                if (Convert.ToDouble(x.Text) >= 0 && Convert.ToDouble(x.Text) < 10)
+                {
+                    x.BackColor = Color.White;
+                }
+                else
+                {
+                    x.BackColor = Color.Red;
+                    MessageBox.Show(" ENTROPY_10 not in range (0-10)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                x.BackColor = Color.Red;
+            }
+        }
+
+        private void X16_Validating(object sender, CancelEventArgs e)
+        {
+            TextBox x = X16;
+            if (!string.IsNullOrEmpty(x.Text))
+            {
+                if (Convert.ToDouble(x.Text) >= 0 && Convert.ToDouble(x.Text) < 8)
+                {
+                    x.BackColor = Color.White;
+                }
+                else
+                {
+                    x.BackColor = Color.Red;
+                    MessageBox.Show(" ENTROPY_2 not in range (0-8)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                x.BackColor = Color.Red;
+            }
+        }
+
+        private void X17_Validating(object sender, CancelEventArgs e)
+        {
+            TextBox x = X17;
+            if (!string.IsNullOrEmpty(x.Text))
+            {
+                if (Convert.ToDouble(x.Text) >= 0 && Convert.ToDouble(x.Text) < 1.5)
+                {
+                    x.BackColor = Color.White;
+                }
+                else
+                {
+                    x.BackColor = Color.Red;
+                    MessageBox.Show(" ENERGY not in range (0-1.5)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                x.BackColor = Color.Red;
+            }
+        }
+
+        private void X18_Validating(object sender, CancelEventArgs e)
+        {
+            TextBox x = X18;
+            if (!string.IsNullOrEmpty(x.Text))
+            {
+                if (Convert.ToDouble(x.Text) >= 0 && Convert.ToDouble(x.Text) < 2)
+                {
+                    x.BackColor = Color.White;
+                }
+                else
+                {
+                    x.BackColor = Color.Red;
+                    MessageBox.Show(" SPHERICITY not in range (0-2)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                x.BackColor = Color.Red;
+            }
+        }
+
+        private void X19_Validating(object sender, CancelEventArgs e)
+        {
+            TextBox x = X19;
+            if (!string.IsNullOrEmpty(x.Text))
+            {
+                if (Convert.ToDouble(x.Text) >= 0 && Convert.ToDouble(x.Text) < 8)
+                {
+                    x.BackColor = Color.White;
+                }
+                else
+                {
+                    x.BackColor = Color.Red;
+                    MessageBox.Show(" COMPACITY not in range (0-8)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                x.BackColor = Color.Red;
+            }
+        }
+
     }
 
 }
