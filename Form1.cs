@@ -118,14 +118,13 @@ namespace App
                             {
                                 x3 = 1;
                             }
-                        }
+                        
+                            if (string.IsNullOrEmpty(meth.Text))
+                            {
 
-                        if (string.IsNullOrEmpty(meth.Text))
-                        {
-                           
-                            MessageBox.Show(" No one method is choosen.\n Please, choose method of segmentation", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        }
-                        else
+                                MessageBox.Show(" No one method is choosen.\n Please, choose method of segmentation", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            }
+                            else
                         {
                             details.Enabled = true;
                             if (meth.Text == "2.1")
@@ -247,11 +246,18 @@ namespace App
                                 return result_;
                             }
                         }
+                        }
                     }
                 }
                 else
                 {
-                    i.BackColor = Color.Red;
+                    foreach (TextBox j in vars)
+                    {
+                        if (string.IsNullOrEmpty(j.Text))
+                        {
+                            j.BackColor = Color.Red;
+                        }
+                    }
                     MessageBox.Show("Not all value\nPlease, enter all values", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     break;
                 }
