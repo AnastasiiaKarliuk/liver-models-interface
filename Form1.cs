@@ -432,14 +432,15 @@ namespace App
         {
             if (!string.IsNullOrEmpty(X4.Text))
             {
-                if (Convert.ToDouble(X4.Text)>=0 && Convert.ToDouble(X4.Text) < 20)
+                if (Convert.ToDouble(X4.Text)>=0 && Convert.ToDouble(X4.Text) <= 20)
                 {
                     X4.BackColor = Color.White;
+                    label3.Visible = false;
                 }
                 else
                 {
-                    X4.BackColor = Color.Blue;
-                    MessageBox.Show("Value not in range (0-20)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    X4.BackColor = Color.Red;
+                    label3.Visible = true;
                 }
             }
             else
@@ -450,16 +451,17 @@ namespace App
 
         private void X5_Validating(object sender, CancelEventArgs e)
         {
-            if (!string.IsNullOrEmpty(X4.Text))
+            if (!string.IsNullOrEmpty(X5.Text))
             {
-                if (Convert.ToDouble(X5.Text) >= 0 && Convert.ToDouble(X5.Text) < 1500)
+                if (Convert.ToDouble(X5.Text) >= 0 && Convert.ToDouble(X5.Text) <= 1500)
                 {
                     X5.BackColor = Color.White;
+                    label23.Visible = false;
                 }
                 else
                 {
                     X5.BackColor = Color.Red;
-                    MessageBox.Show(" MVT not in range (0-1500)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    label23.Visible = true;
                 }
             }
             else
@@ -472,14 +474,15 @@ namespace App
         {
             if (!string.IsNullOrEmpty(X6.Text))
                 {
-                    if (Convert.ToDouble(X6.Text) >= 0 && Convert.ToDouble(X6.Text) < 6500)
+                    if (Convert.ToDouble(X6.Text) >= 0 && Convert.ToDouble(X6.Text) <= 6500)
                     {
                         X6.BackColor = Color.White;
+                        label24.Visible = false;
                     }
                     else
                     {
                         X6.BackColor = Color.Red;
-                        MessageBox.Show(" TGL not in range (0-6500)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        label24.Visible = true;
                     }
                 }
             else
@@ -492,14 +495,15 @@ namespace App
         {
             if (!string.IsNullOrEmpty(X7.Text))
             {
-                if (Convert.ToDouble(X7.Text) >= 0 && Convert.ToDouble(X7.Text) < 1)
+                if (Convert.ToDouble(X7.Text) >= 0 && Convert.ToDouble(X7.Text) <= 1)
                 {
                     X7.BackColor = Color.White;
+                    label25.Visible = false;
                 }
                 else
                 {
                     X7.BackColor = Color.Red;
-                    MessageBox.Show(" GLCM Homogeneity not in range (0-1)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    label25.Visible = true;
                 }
             }
             else
@@ -512,14 +516,15 @@ namespace App
         {
             if (!string.IsNullOrEmpty(X8.Text))
             {
-                if (Convert.ToDouble(X8.Text) >= 0 && Convert.ToDouble(X8.Text) < 4)
+                if (Convert.ToDouble(X8.Text) >= 0 && Convert.ToDouble(X8.Text) <= 4)
                 {
                     X8.BackColor = Color.White;
+                    label26.Visible = false;
                 }
                 else
                 {
                     X8.BackColor = Color.Red;
-                    MessageBox.Show(" GLCM_Entropy not in range (0-4)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    label26.Visible = true;
                 }
             }
             else
@@ -535,11 +540,12 @@ namespace App
                 if (Convert.ToDouble(X9.Text) >= 0 && Convert.ToDouble(X9.Text) <= 1)
                 {
                     X9.BackColor = Color.White;
+                    label27.Visible = false;
                 }
                 else
                 {
                     X9.BackColor = Color.Red;
-                    MessageBox.Show(" GLRLM_SRE not in range (0-1)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    label27.Visible = true;
                 }
             }
             else
@@ -555,11 +561,12 @@ namespace App
                 if (Convert.ToDouble(X10.Text) >= 0 && Convert.ToDouble(X10.Text) <= 4)
                 {
                     X10.BackColor = Color.White;
+                    label28.Visible = false;
                 }
                 else
                 {
                     X10.BackColor = Color.Red;
-                    MessageBox.Show(" GLRLM_LRE not in range (0-4)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    label28.Visible = true;
                 }
             }
             else
@@ -572,14 +579,15 @@ namespace App
         {
             if (!string.IsNullOrEmpty(X11.Text))
             {
-                if (Convert.ToDouble(X11.Text) >= 0 && Convert.ToDouble(X11.Text) < 0.5)
+                if (Convert.ToDouble(X11.Text) >= 0 && Convert.ToDouble(X11.Text) <= 0.5)
                 {
                     X11.BackColor = Color.White;
+                    label29.Visible = false;
                 }
                 else
                 {
                     X11.BackColor = Color.Red;
-                    MessageBox.Show(" GLZLM_LGZE not in range (0-0.5)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    label29.Visible = true;
                 }
             }
             else
@@ -593,14 +601,15 @@ namespace App
             TextBox x = X12;
             if (!string.IsNullOrEmpty(x.Text))
             {
-                if (Convert.ToDouble(x.Text) >= 0 && Convert.ToDouble(x.Text) < 1500)
+                if (Convert.ToDouble(x.Text) >= 0 && Convert.ToDouble(x.Text) <= 1500)
                 {
                     x.BackColor = Color.White;
+                    label30.Visible = false;
                 }
                 else
                 {
                     x.BackColor = Color.Red;
-                    MessageBox.Show(" GLZLM_HGZE not in range (0-1500)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    label30.Visible = true;
                 }
             }
             else
@@ -614,14 +623,15 @@ namespace App
             TextBox x = X13;
             if (!string.IsNullOrEmpty(x.Text))
             {
-                if (Convert.ToDouble(x.Text) >= 0 && Convert.ToDouble(x.Text) < 2)
+                if (Convert.ToDouble(x.Text) >= 0 && Convert.ToDouble(x.Text) <= 2)
                 {
                     x.BackColor = Color.White;
+                    label31.Visible = false;
                 }
                 else
                 {
                     x.BackColor = Color.Red;
-                    MessageBox.Show(" SKEWNESS not in range (0-2)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    label31.Visible = true;
                 }
             }
             else
@@ -635,14 +645,15 @@ namespace App
             TextBox x = X14;
             if (!string.IsNullOrEmpty(x.Text))
             {
-                if (Convert.ToDouble(x.Text) >= 0 && Convert.ToDouble(x.Text) < 7)
+                if (Convert.ToDouble(x.Text) >= 0 && Convert.ToDouble(x.Text) <= 7)
                 {
                     x.BackColor = Color.White;
+                    label32.Visible = false;
                 }
                 else
                 {
                     x.BackColor = Color.Red;
-                    MessageBox.Show(" KURTOSIS not in range (0-7)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    label32.Visible = true;
                 }
             }
             else
@@ -656,14 +667,15 @@ namespace App
             TextBox x = X15;
             if (!string.IsNullOrEmpty(x.Text))
             {
-                if (Convert.ToDouble(x.Text) >= 0 && Convert.ToDouble(x.Text) < 10)
+                if (Convert.ToDouble(x.Text) >= 0 && Convert.ToDouble(x.Text) <= 10)
                 {
                     x.BackColor = Color.White;
+                    label33.Visible = false;
                 }
                 else
                 {
                     x.BackColor = Color.Red;
-                    MessageBox.Show(" ENTROPY_10 not in range (0-10)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    label33.Visible = true;
                 }
             }
             else
@@ -677,14 +689,15 @@ namespace App
             TextBox x = X16;
             if (!string.IsNullOrEmpty(x.Text))
             {
-                if (Convert.ToDouble(x.Text) >= 0 && Convert.ToDouble(x.Text) < 8)
+                if (Convert.ToDouble(x.Text) >= 0 && Convert.ToDouble(x.Text) <= 8)
                 {
                     x.BackColor = Color.White;
+                    label34.Visible = false;
                 }
                 else
                 {
                     x.BackColor = Color.Red;
-                    MessageBox.Show(" ENTROPY_2 not in range (0-8)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    label34.Visible = true;
                 }
             }
             else
@@ -698,14 +711,15 @@ namespace App
             TextBox x = X17;
             if (!string.IsNullOrEmpty(x.Text))
             {
-                if (Convert.ToDouble(x.Text) >= 0 && Convert.ToDouble(x.Text) < 1.5)
+                if (Convert.ToDouble(x.Text) >= 0 && Convert.ToDouble(x.Text) <= 1.5)
                 {
                     x.BackColor = Color.White;
+                    label35.Visible = false;
                 }
                 else
                 {
                     x.BackColor = Color.Red;
-                    MessageBox.Show(" ENERGY not in range (0-1.5)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    label35.Visible = true;
                 }
             }
             else
@@ -719,14 +733,15 @@ namespace App
             TextBox x = X18;
             if (!string.IsNullOrEmpty(x.Text))
             {
-                if (Convert.ToDouble(x.Text) >= 0 && Convert.ToDouble(x.Text) < 2)
+                if (Convert.ToDouble(x.Text) >= 0 && Convert.ToDouble(x.Text) <= 2)
                 {
                     x.BackColor = Color.White;
+                    label36.Visible = false;
                 }
                 else
                 {
                     x.BackColor = Color.Red;
-                    MessageBox.Show(" SPHERICITY not in range (0-2)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    label36.Visible = true;
                 }
             }
             else
@@ -740,14 +755,15 @@ namespace App
             TextBox x = X19;
             if (!string.IsNullOrEmpty(x.Text))
             {
-                if (Convert.ToDouble(x.Text) >= 0 && Convert.ToDouble(x.Text) < 8)
+                if (Convert.ToDouble(x.Text) >= 0 && Convert.ToDouble(x.Text) <= 8)
                 {
                     x.BackColor = Color.White;
+                    label37.Visible = false;
                 }
                 else
                 {
                     x.BackColor = Color.Red;
-                    MessageBox.Show(" COMPACITY not in range (0-8)", "Value ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    label37.Visible = true;
                 }
             }
             else
